@@ -22,7 +22,7 @@ class revSpeechmod:
            time.sleep(5)
        return client.get_transcript(id_)
     def setSwears(self, x):
-        self.swearWords.clear()
+        self.swearWords=[]
         with open(x, 'r') as fp:
             swears = json.load(fp)
             for a in swears:
