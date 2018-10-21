@@ -13,8 +13,8 @@ body {
 #box1, #box2{
 	width:200px;
 	height:200px;
-	margin:10px;
-	padding:10px;
+	margin:50px;
+	padding:5px;
   border-radius: 25px;
   text-align: center;
 
@@ -30,7 +30,9 @@ body {
 }
 
 h2, p  {
-	padding:5px;
+	padding:10px;
+  text-align: center;
+  color: #000000;
 }
 
 #box1 p, #box2 p {
@@ -39,18 +41,19 @@ h2, p  {
 	font-family:monospace;
 }
 </style>
+<div style="float: left;">
 <a href="{{ url_for('home') }}" style="float: left;" id="box1">
 	<h2>Add A Swear Word</h2>
 </a>
-<div id="box2">
-	<h2>Analytics</h2>
 </div>
-  <body>
-    {% extends "template.html" %}
-    {% block content %}
-    <h1> My First Try Using Flask </h1>
-    <p> Flask is Fun </p>
-
-    {% endblock %}
-  </body>
+<div style="float: right;">
+<a href="{{ url_for('home') }}" style="float: left" id="box2">
+	<h2>Analytics</h2>
+</a>
+</div>
+<div style="float: right;">
+<a href="{{ url_for('about') }}" style="float: right;" id="box1">
+	<h2>About</h2>
+</a>
+</div>
 </html>
