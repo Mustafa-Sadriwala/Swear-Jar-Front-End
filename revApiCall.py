@@ -10,6 +10,7 @@ from rev_ai.speechrec import RevSpeechAPI
 
 class revSpeechmod:
     def __init__(self, transcript = ""):
+	print(transcript)
         if transcript != "":
             with open(transcript, 'r') as fp:
                 self.transcript = json.load(fp)
@@ -22,10 +23,10 @@ class revSpeechmod:
            time.sleep(5)
        return client.get_transcript(id_)
     def setSwears(self, x):
-        self.swearWords.clear()
+        self.swearWords=[]
         with open(x, 'r') as fp:
             swears = json.load(fp)
-            for a in swears:
+            for a in swears['swears']:
                 self.swearWords.append(a.lower())
     def getTranscript(self, file):
         result = self.client.submit_job_local_file(file)
@@ -39,7 +40,8 @@ class revSpeechmod:
         self.transcript = file
     def checkSwears(self, file = ""):
         swears = 0;
-        if(file == ""):
+	listOfSwears=[];
+        if(file != ""):
             self.transcript = self.getTranscript(file)
         bagOfWords = []
         x = self.transcript['monologues'][0]['elements']
@@ -52,5 +54,7 @@ class revSpeechmod:
         for i in bagOfWords:
             print(i)
             if i in self.swearWords:
-                swears +=1
+                swears +=1;
+		listOfSwears.append(i)
         print(swears)
+	return [swears, listOfSwears]

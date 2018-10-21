@@ -28,7 +28,7 @@ ul li {
   background: #eee;
   font-size: 18px;
   transition: 0.2s;
-  
+
   /* make the list items unselectable */
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -137,7 +137,7 @@ input {
   <li>Peanut Butter</li>
 </ul>
 
-<script>
+<script language="JavaScript">
 // Create a "close" button and append it to each list item
 var myNodelist = document.getElementsByTagName("LI");
 var i;
@@ -185,6 +185,10 @@ function newElement() {
   span.className = "close";
   span.appendChild(txt);
   li.appendChild(span);
+
+  /** var file = fopen("../swears.json", 3);
+  fwrite(file, JSON.stringify(myNodelist)); **/
+
 
   for (i = 0; i < close.length; i++) {
     close[i].onclick = function() {
