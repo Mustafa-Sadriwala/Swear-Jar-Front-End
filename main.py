@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from .revApiCall import revSpeechmod
+from revApiCall import revSpeechmod
 
 app = Flask(__name__)
 
@@ -16,8 +16,7 @@ def swears():
     return render_template("swears.html")
 
 if __name__ == "__main__":
-    revSpeech = revSpeechmod()
-    revSpeech.setSwears('swears.json')
-    revSpeech.getTranscript('audio.mp3')
+    revSpeech = revSpeechmod('audio.mp3.json')
+    #revSpeech.getTranscript('audio.mp3')
     revSpeech.checkSwears()
     app.run(debug=True)

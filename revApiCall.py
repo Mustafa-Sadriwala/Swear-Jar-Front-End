@@ -39,7 +39,7 @@ class revSpeechmod:
         self.transcript = file
     def checkSwears(self, file = ""):
         swears = 0;
-        if(file == ""):
+        if(file != ""):
             self.transcript = self.getTranscript(file)
         bagOfWords = []
         x = self.transcript['monologues'][0]['elements']
