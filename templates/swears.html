@@ -137,7 +137,7 @@ input {
   <li>Peanut Butter</li>
 </ul>
 
-<script>
+<script language="JavaScript">
 // Create a "close" button and append it to each list item
 var myNodelist = document.getElementsByTagName("LI");
 var i;
@@ -186,14 +186,9 @@ function newElement() {
   span.appendChild(txt);
   li.appendChild(span);
 
-  const fs = require('fs');
-  fs.writeFile("../swears.json", JSON.stringify(myNodelist), function(err) {
-    if(err) {
-        return console.log(err);
-    }
+  /** var file = fopen("../swears.json", 3);
+  fwrite(file, JSON.stringify(myNodelist)); **/
 
-    console.log("The file was saved!");
-});
 
   for (i = 0; i < close.length; i++) {
     close[i].onclick = function() {
