@@ -68,9 +68,9 @@ h2, p  {
   <a href="{{ url_for('swears') }}" style="" id="box1">
   	<h2>Add a Swear Word</h2>
   </a>
-  <a href="{{ url_for('home') }}" style="" id="box3">
+  <!--<a href="{{ url_for('home') }}" style="" id="box3">
 	   <h2>Analytics</h2>
-  </a>
+  </a>-->
   <a href="{{ url_for('about') }}" style="" id="box2">
 	    <h2>About</h2>
   </a>
@@ -78,5 +78,9 @@ h2, p  {
 	    <h2>Donate</h2>
   </a>
 </div>
+</div>
+<div>
+  <h3>Number of Swears: {{ value }}</h3>
+  <h3>{{ list }}</h3>
 </div>
 </html>
