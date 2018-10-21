@@ -27,7 +27,7 @@ def main(argv):
                 print("Error")
                 break
     revSpeech.setSwears('swears.json')
-    revSpeech.checkSwears()
+    num, swears = revSpeech.checkSwears()
     app.run(debug=True)
 
 

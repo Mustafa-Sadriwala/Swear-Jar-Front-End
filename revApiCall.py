@@ -40,6 +40,7 @@ class revSpeechmod:
         self.transcript = file
     def checkSwears(self, file = ""):
         swears = 0;
+	listOfSwears=[];
         if(file != ""):
             self.transcript = self.getTranscript(file)
         bagOfWords = []
@@ -53,5 +54,7 @@ class revSpeechmod:
         for i in bagOfWords:
             print(i)
             if i in self.swearWords:
-                swears +=1
+                swears +=1;
+		listOfSwears.append(i)
         print(swears)
+	return [swears, listOfSwears]
