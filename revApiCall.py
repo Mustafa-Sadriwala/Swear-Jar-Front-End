@@ -4,6 +4,7 @@ import json
 import re
 
 
+
 from rev_ai.speechrec import RevSpeechAPI
 
 
@@ -20,11 +21,12 @@ class revSpeechmod:
            print('waiting...')
            time.sleep(5)
        return client.get_transcript(id_)
-    def addSwears(self, x):
-        for a in x:
-            self.swearWords.append(a.lower())
-    def removeSwear(self, x):
-        self.swearWords.remove(x)
+    def setSwears(self, x):
+        self.swearWords.clear()
+        with open(x, 'r') as fp:
+            swears = json.load(fp)
+            for a in swears:
+                self.swearWords.append(a.lower())
     def getTranscript(self, file):
         result = self.client.submit_job_local_file(file)
         transcript = self.await_transcript(self.client, result['id'])
@@ -35,10 +37,10 @@ class revSpeechmod:
         return transcript
     def setTranscript(self, file):
         self.transcript = file
-    def checkSwears(self):
+    def checkSwears(self, file = ""):
         swears = 0;
-        if(self.transcript == ""):
-            transcript = self.getTranscript(file)
+        if(file == ""):
+            self.transcript = self.getTranscript(file)
         bagOfWords = []
         x = self.transcript['monologues'][0]['elements']
         for i in x:
