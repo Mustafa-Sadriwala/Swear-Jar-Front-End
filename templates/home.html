@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Flask Tutorial</title>
+  </head>
+  <style type="text/css">
+body {
+	margin:10px;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif
+}
+
+#box1, #box2{
+	width:200px;
+	height:200px;
+	margin:10px;
+	padding:10px;
+  border-radius: 25px;
+  text-align: center;
+
+  margin: auto;
+}
+
+#box1 {
+	background:#4242f4;
+}
+
+#box2 {
+	background:#4ae2ab;
+}
+
+h2, p  {
+	padding:5px;
+}
+
+#box1 p, #box2 p {
+	white-space:pre;
+	font-size:smaller;
+	font-family:monospace;
+}
+</style>
+<a href="{{ url_for('home') }}" style="float: left;" id="box1">
+	<h2>Add A Swear Word</h2>
+</a>
+<div id="box2">
+	<h2>Analytics</h2>
+</div>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+    <h1> My First Try Using Flask </h1>
+    <p> Flask is Fun </p>
+
+    {% endblock %}
+  </body>
+</html>
