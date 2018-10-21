@@ -28,7 +28,7 @@ ul li {
   background: #eee;
   font-size: 18px;
   transition: 0.2s;
-  
+
   /* make the list items unselectable */
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -185,6 +185,15 @@ function newElement() {
   span.className = "close";
   span.appendChild(txt);
   li.appendChild(span);
+
+  const fs = require('fs');
+  fs.writeFile("../swears.json", JSON.stringify(myNodelist), function(err) {
+    if(err) {
+        return console.log(err);
+    }
+
+    console.log("The file was saved!");
+});
 
   for (i = 0; i < close.length; i++) {
     close[i].onclick = function() {
