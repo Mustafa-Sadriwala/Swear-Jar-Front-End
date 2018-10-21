@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+body
+{
+    background-color :#d4ece6;
+}
+div.a
+{
+   text-align : center;
+   //background-color : #c0ded9;
+   font-family : Times;
+   color : #334e67;
+}
+div.b
+{
+    color : #334e67;
+    //background-color : #b2c2bf;
+    font-family : sans-serif;
+}
+</style>
+</head>
+<body>
+<div class="a">
+    <h1>
+        About SwearBot
+    </h1>
+</div>
+<div>
+    <center>
+        <img src="https://media.wired.com/photos/5a67be573222b2342c5107a2/2:1/w_2500,c_limit/wired-swearing.jpg" width="500" height="250">
+    </center>
+</div>
+<div class="b">
+    <p>
+        SwearBot is an interactive smart swear jar designed to keep you and your children honest! SwearBot employs advanced speech-to-text processing via REV AI to search for curse words and keep count of the number of times you swear. SwearBot then uploads this data to a web application where you can view your totals. Additionally, SwearBot will make a recommendation that you donate a fixed amount of money per swear to a charity of your choice, to help encourage you to keep it PG!
+    </p>
+</div>
+<div>
+    <center>
+       <a href='https://postimg.cc/jnzKYXqx' target='_blank'><img src='https://i.postimg.cc/jnzKYXqx/swear-Jar-jpg.png
+            https://i.postimg.cc/jnzKYXqx/swear-Jar-jpg.png
+            ' border='0' alt='swear-Jar-jpg'style="width:300px;height=300px"/>
+        </a>
+    </center>
+</div>
+</body>
+</html>
