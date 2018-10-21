@@ -10,6 +10,7 @@ from rev_ai.speechrec import RevSpeechAPI
 
 class revSpeechmod:
     def __init__(self, transcript = ""):
+	print(transcript)
         if transcript != "":
             with open(transcript, 'r') as fp:
                 self.transcript = json.load(fp)
@@ -25,7 +26,7 @@ class revSpeechmod:
         self.swearWords=[]
         with open(x, 'r') as fp:
             swears = json.load(fp)
-            for a in swears:
+            for a in swears['swears']:
                 self.swearWords.append(a.lower())
     def getTranscript(self, file):
         result = self.client.submit_job_local_file(file)
