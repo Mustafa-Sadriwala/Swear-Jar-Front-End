@@ -1,7 +1,6 @@
 from flask import Flask, render_template
 from revApiCall import revSpeechmod
 import sys, getopt
-
 def main(argv):
     inputfile = ''
     outputfile = ''
@@ -27,7 +26,9 @@ def main(argv):
                 print("Error")
                 break
     revSpeech.setSwears('swears.json')
+    global num
     num, swears = revSpeech.checkSwears()
+    print(num, swears)
     app.run(debug=True)
 
 
@@ -35,7 +36,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("home.html")
+    return render_template("home.html", value=num)
 
 @app.route("/about")
 def about():
